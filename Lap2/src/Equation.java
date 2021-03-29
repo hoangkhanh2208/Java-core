@@ -1,9 +1,13 @@
 import java.util.Scanner;
 
 
-public class Exercise {
+public class Equation {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        int nam = 2021 % 12;
+
+        System.out.println(nam);
 
         System.out.println("Nhập a: ");
         float a = sc.nextInt();
