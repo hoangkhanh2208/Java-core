@@ -25,7 +25,9 @@ public class Ex2 {
 
         getArray(arr, n, m);
 
-        diagonal(arr, n, m);
+        diagonalMain(arr, n, m);
+
+        diagonalSub(arr, n, m);
     }
 
     static void getArray(int arr[][], int n, int m){
@@ -48,9 +50,9 @@ public class Ex2 {
         }
     }
 
-    static void diagonal(int[][] arr, int n, int m) {
+    static void diagonalMain(int[][] arr, int n, int m) {
         int sum = 0;
-        System.out.println("Danh sách các phần tử nằm trên đường chéo chính: ");
+        System.out.println("* Danh sách các phần tử nằm trên đường chéo chính: ");
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 if (i == j) {
@@ -61,6 +63,22 @@ public class Ex2 {
         }
 
         System.out.println("\nTổng các phần tử nằm trên đường chéo chính: " + sum);
+    }
+
+
+    static void diagonalSub(int[][] arr, int n, int m) {
+        int sum = 0;
+        System.out.println("* Danh sách các phần tử nằm trên đường chéo phụ: ");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (i + j == n - 1) {
+                    System.out.print(arr[i][j] + "\t");
+                    sum += arr[i][j];
+                }
+            }
+        }
+
+        System.out.println("\nTổng các phần tử nằm trên đường chéo phụ: " + sum);
     }
 
 }
