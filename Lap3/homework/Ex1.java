@@ -3,6 +3,7 @@ package homework;
 import java.util.Scanner;
 
 public class Ex1 {
+    public static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -31,6 +32,12 @@ public class Ex1 {
         chen(arr, n, x, k);
 
         System.out.printf("Danh sách mảng sau khi thêm giá trị [%d] vào vị trí [%d]: \n" , x , k);
+        getArray2(arr, n);
+
+        System.out.println("\nNhập vị trí muốn sửa: ");
+        int e = sc.nextInt();
+
+        change(arr, n, e);
         getArray2(arr, n);
     }
 
@@ -93,19 +100,30 @@ public class Ex1 {
     }
 
     static boolean isPrime(int n) {
-        if (n == 1 || n == 0)
+        if (n < 2)
             return false;
         for (int i = 2; i <= Math.sqrt(n); i++)
             if (n % i == 0)
                 return false;
+                
         return true;
 
     }
     
-    static void chen(int [] arr, int n , int x ,int k) {
-        for(int i = n; i > k;i--){
-            arr[i] = arr[i-1];
-        }  
+    static void chen(int[] arr, int n, int x, int k) {
+        for (int i = n; i > k; i--) {
+            arr[i] = arr[i - 1];
+        }
         arr[k] = x;
+    
+    }
+    
+    static void change(int [] arr, int n, int e) {
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == arr[e]) {
+                System.out.println("\nNhập giá trị muốn sửa: ");
+                arr[i] = sc.nextInt();
+            }
+        }
     }
 }
