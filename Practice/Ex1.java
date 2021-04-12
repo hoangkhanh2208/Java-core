@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+    // ------------------ TÌM UCLN VÀ BCNN CỦA HAI SỐ --------------------
 public class Ex1 {
      private static Scanner scanner = new Scanner(System.in);
 
