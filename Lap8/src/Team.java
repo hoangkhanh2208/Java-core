@@ -6,7 +6,7 @@ public class Team {
     ArrayList<Player> listAllPlayers;
     ArrayList<Player> buildTeams;
 
-    public List<Player> getGetAllPlayer() {
+    public List<Player> addListAllPlayer() {
         listAllPlayers = new ArrayList<Player>();
 
         listAllPlayers.add(new Player("Marc-André ter Stegen", Position.GK, 1));
@@ -32,17 +32,15 @@ public class Team {
         listAllPlayers.add(new Player("Junior Firpo", Position.DF, 21));
         listAllPlayers.add(new Player("Matheus Fernandes", Position.DF, 22));
 
-        for (Player player : listAllPlayers) {
-            System.out.println(player.toString());
-        }
+        getList(listAllPlayers);
         return listAllPlayers;
     }
     
-    public List<Player> buildTeam(int df, int mf, int fw) {
+    public List<Player> buildTeam(int defender, int midField, int forwarder) {
         buildTeams = new ArrayList<Player>();
-
         Random random = new Random();
-
+        
+        final int GOAL_KEEPER = 1;
         int thuMon = 0;
         int hauVe = 0;
         int trungVe = 0;
@@ -50,46 +48,41 @@ public class Team {
 
         System.out.println("\n\nDanh sách đội bóng: ");
 
-        while (thuMon < 1) {
-            int rdThuMon = random.nextInt(22);
-            if (listAllPlayers.get(rdThuMon).getPosition().equals(Position.GK)) {
-                buildTeams.add(listAllPlayers.get(rdThuMon));
-                thuMon++;
-            }
-        }
+        thuMon = extractPosition(GOAL_KEEPER, random, thuMon, Position.GK);
 
-        while (hauVe < df) {
-            int rdHauVe = random.nextInt(22);
-            if (listAllPlayers.get(rdHauVe).getPosition().equals(Position.DF)
-                    && !buildTeams.contains(listAllPlayers.get(rdHauVe))) {
-                buildTeams.add(listAllPlayers.get(rdHauVe));
-                hauVe++;
-            }
-        }
+        hauVe = extractPosition(defender, random, hauVe, Position.DF);
+        
+        trungVe = extractPosition(midField, random, trungVe, Position.MF);
 
-        while (trungVe < mf) {
-            int rdTrungVe = random.nextInt(22);
-            if (listAllPlayers.get(rdTrungVe).getPosition().equals(Position.MF)
-                    && !buildTeams.contains(listAllPlayers.get(rdTrungVe))) {
-                buildTeams.add(listAllPlayers.get(rdTrungVe));
-                trungVe++;
-            }
-        }
+        tienDao = extractPosition(forwarder, random, tienDao, Position.FW);
 
-        while (tienDao < fw) {
-            int rdTienDao = random.nextInt(22);
-            if (listAllPlayers.get(rdTienDao).getPosition().equals(Position.FW)
-                    && !buildTeams.contains(listAllPlayers.get(rdTienDao))) {
-                buildTeams.add(listAllPlayers.get(rdTienDao));
-                tienDao++;
-            }
-        }
-
-         for (Player player : buildTeams) {
-            System.out.println(player);
-        }
+        getList(buildTeams);
         return buildTeams;
     }
+
+    private int extractPosition(int signPosition, Random random, int position , Position enumPosition) {
+        while (position  < signPosition) {
+            int rdPosition = random.nextInt(22);
+            if (isPlayer(rdPosition, enumPosition)) {
+                buildTeams.add(listAllPlayers.get(rdPosition));
+                position++;
+            }
+        }
+        return position;
+    }
+
+    private void getList(List <Player> players) {
+        for (Player player : players) {
+            System.out.println(player);
+        }
+    }
+
+    private boolean isPlayer(int rdPosition, Position position) {
+        return listAllPlayers.get(rdPosition).getPosition().equals(position)
+                && !buildTeams.contains(listAllPlayers.get(rdPosition));
+    }
+    
+    
     
     
 }

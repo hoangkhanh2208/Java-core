@@ -35,7 +35,7 @@ public class Player {
 
     @Override
     public String toString() {
-        return  fullName + " - " + number + " - " + position;
+        return  number + " - " + fullName + " - " + position;
     }
 
     

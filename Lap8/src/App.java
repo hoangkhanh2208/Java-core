@@ -5,10 +5,11 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         int choose;
-        String st;
         Team team = new Team();
+
+
         System.out.println("Danh sách cầu thủ: ");
-        team.getGetAllPlayer();
+        team.addListAllPlayer();
 
         do {
             lineUp();
