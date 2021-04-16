@@ -43,7 +43,7 @@ public class App {
 
     }
 
-    static void menu() {
+    static void menu(){
         System.out.println();
         System.out.println("-------------------------------");
         System.out.println("1. Thêm sản phẩm ");
