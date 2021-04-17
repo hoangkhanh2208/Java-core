@@ -33,6 +33,9 @@ public class App {
             case 8:
                 quanLySanPham.xoaToanBo();
                 break;
+            case 9:
+                quanLySanPham.suaThongTin();
+                break;
             case 0:
                 System.exit(0);
                 break;
@@ -53,7 +56,8 @@ public class App {
         System.out.println("5. In thông tin sản phẩm dựa theo mức giá và danh mục ");
         System.out.println("6. Tìm kiếm sản phẩm theo tên ");
         System.out.println("7. Xóa sản phẩm theo tên ");
-        System.out.println("7. Xóa toàn bộ sản phẩm ");
+        System.out.println("8. Xóa toàn bộ sản phẩm ");
+        System.out.println("9. Sửa thông tin sản phẩm");
         System.out.println("0. Thoát ");
         System.out.println("-------------------------------");
 

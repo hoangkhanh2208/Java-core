@@ -225,9 +225,22 @@ public class QuanLySanPham {
         System.out.println("Bạn có chắc chắn muốn xóa toàn bộ sản phẩm!(1. Yes OR 2. No)");
         chon = sc.nextInt();
         if (chon == 1) {
-            sanPhamList.removeAll(sanPhamList);
+            sanPhamList.clear();
             fileSanPham.write(sanPhamList);
             System.out.println("Xóa thành công!");
+        }
+    }
+
+    public void suaThongTin() {
+        System.out.println("Nhập tên sản phẩm muốn sửa: ");
+        String name = sc.nextLine();
+
+        for (SanPham sanPham : sanPhamList) {
+            if (sanPham.getTenSP().equalsIgnoreCase(name)) {
+                sanPham.input();
+                fileSanPham.write(sanPhamList);
+            }
+            System.out.println("Không có sản phẩm này!");
         }
     }
 
