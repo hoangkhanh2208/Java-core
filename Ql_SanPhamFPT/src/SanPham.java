@@ -149,7 +149,7 @@ public class SanPham implements Serializable{
     @Override
     public String toString() {
         return "Ma SP: " + maSP + " | Ten: " + tenSP + " | Mo ta: " + moTa + " | Gia nhap: " + giaNhap + " | Gia ban: " + giaBan + " | So luong ton: " + slTon + " | So luong ban: " + slBan + " | Hang: " + hang + " | Danh muc: "
-                + danhMuc;    }
+                + danhMuc.getName();    }
 
     
 
