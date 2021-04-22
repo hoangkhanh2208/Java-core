@@ -1,0 +1,65 @@
+Làm thế nào để viết chương trình Hello World bằng Java?
+
+Chương trình đầu tiên mà bất kì ai học về Java là chương trình Hello World. Nhưng đôi khi chúng ta bỏ lỡ sự thực tế của cú pháp cơ bản. Thông qua bài viết này, tôi sẽ đi vào chi tiết chương trình kinh điển Hello World này trong ngôn ngữ Java.
+
+Dưới đây là các chủ đề được đề cập trong bài viết này:
+•	Chương trình Hello World trong Java
+•	Phân tích cú pháp
+•	Biên dịch chương trình
+•	Thực thi chương trình
+
+Bắt đầu nào.
+
+Chương trình Hello World trong Java
+Trước khi chúng ta đi vào chi tiết, trước tiên hãy bắt đầu với việc viết mã và xem chương trình Hello World cơ bản trong Java được mã hóa như thế nào.
+		
+		Hình ảnh 
+
+Bây giờ bạn đã hoàn tất việc viết mã, bây giờ chúng ta hãy phân tích sâu về cú pháp của chương trình.
+
+Phân tích cú pháp
+
+Dòng 1: public class HelloWorldDemo{
+Dòng này sử dụng từ khóa class để khai báo một lớp mới được đặt tên là HelloWorldDemo. Vì Java là ngôn ngữ lập trình hướng đối tượng  (OOP) nên toàn bộ định nghĩa lớp, bao gồm tất cả các thành viên của nó phải được chứa ở giữa dấu ngoặc nhọn mở { và dấu ngoặc nhọn đóng }. Ngoài ra, nó đang sử dụng từ khóa public để chỉ định khả năng truy cập của lớp từ bên ngoài gói. 
+Dòng 2: public static void main( String[] args) {
+Dòng này khai báo một phương thức được gọi là main (String []).  Nó được gọi là phương thức chính và đóng vai trò là điểm bắt đầu để trình biên dịch Java thực thi chương trình.  Nói cách khác, bất cứ khi nào bất kỳ chương trình nào được thực thi trong Java, phương thức main là hàm đầu tiên được gọi.  Các chức năng khác trong ứng dụng sau đó được gọi từ phương thức chính.  Trong một ứng dụng Java tiêu chuẩn, một phương thức chính là bắt buộc để kích hoạt việc thực thi.
+
+Bây giờ chúng ta hãy chia nhỏ toàn bộ dòng này và phân tích từng từ:
+Public: nó là một công cụ sửa đổi quyền truy cập chỉ định khả năng hiển thị.  Nó cho phép JVM thực thi phương thức từ bất cứ đâu.
+Static: Nó là một từ khóa làm cho bất kỳ thành viên nào trong lớp trở nên tĩnh.  Phương thức chính được tạo tĩnh vì không cần tạo đối tượng để gọi các phương thức tĩnh trong Java.  Do đó, JVM có thể gọi nó mà không cần phải tạo một đối tượng giúp tiết kiệm bộ nhớ.
+Void: Nó đại diện cho kiểu trả về của phương thức. Vì phương thức main không trả về bất kì giá trị nào nên kiểu trả về của nó được khai báo là void.
+Main(): Đây là tên của phương thức đã được cấu hình trong JVM.
+String[]: Nó thể hiện rằng phương thức main của Java có thể chấp nhận một đối số dòng duy nhất của kiểu String array. Đây còn được gọi là đối số dòng lệnh Java. Dưới đây tôi đã liệt kê xuống một số cách viết phương thức chính của Java hợp lệ:
+•	public static void main(String[] args)
+•	public static void main(String []args)
+•	public static void main(String args[])
+•	public static void main(String… args)
+•	static void main(String[] args)
+•	public static final void main(String[] args)
+•	final public static void main(String[] args)
+
+Dòng 3: System.out.println(“Hello World”);
+System: Nó là một lớp được định nghĩa trước trong gói java.lang chứa nhiều phương thức hữu ích và biến khác nhau.
+Out: Nó là một trường thành viên tĩnh kiểu PrintStream.
+Println: Nó là một phương thức của lớp PrintStream và được sử dụng để in đối số đã được chuyển đến bảng điều khuyển tiêu chuẩn và một dòng mới. Bạn cũng có thể sử dụng phương thức print() thay vì println().
+Dòng 4: System.out.exit( 0 );
+Phương thức java.lang.System.exit() được sử dụng để thoát khỏi chương trình bằng cách kết thúc máy ảo Java hiện đang thực thi. Phương thức này lấy mã trạng thái làm đầu vào mà thường là các giá trị khác 0. Nó chỉ ra trong trường hợp có bất kỳ sự chấm dứt bất thường nào xảy ra.
+•	exit(0): Nó được sử dụng để thể hiện kết thúc thành công.
+•	exit(1) hoặc exit(-1) hoặc bất cứ giá trị nào khác 0: Nó được sử dụng để thể hiện kết thúc không thành công.
+Đó là tất cả về cú pháp chương trình. Bây giờ chúng ta hay xem cách biên dịch Hello World trong chương trình Java.
+ 
+Biên dịch chương trình
+Bây giờ những gì bạn cần làm là nhập chương trình này vào trình soạn thảo văn bản của bạn, lưu nó với tên lớp mà bạn đã sử dụng trong chương trình của mình. Trong trường hợp của tôi, tôi sẽ lưu nó dưới dạng HelloWorldDemo.java. 
+Bước tiếp theo là đi đến cửa sổ bảng điều khuyển của bạn và điều hướng đến thư mục nơi bạn đã lưu chương trình của mình.
+Bây giờ để biên dịch chương trình hãy gõ theo lệnh dưới đây:
+	Javac HelloWorldDemo.java
+Lưu ý: Java phân biệt chữ hoa và chữ thường, do đó hãy đảm bảo bạn nhập tên tệp đúng định dạng.
+Nếu thực thi thành công, lệnh này sẽ tạo ra tệp HelloWorldDemo.class, tệp này sẽ độc lập với máy và có bản chất di động.
+Bây giờ bạn đã biên dịch thành công chương trình, chúng ta hãy thử thực hiện chương trình Hello World bằng Java và xem kết quả.
+Thực hiện chương trình
+Để thực thi chương trình HelloWorld trong Java của bạn trên dòng lệnh, tất cả những gì bạn cần làm là nhập mã dưới đây:
+	Java HelloWorldDemo
+Thì đấy! Bạn đã thực hiện thành công chương trình của mình bằng Java.
+Trong trường hợp bạn đang sử dụng IDE, bạn có thể bỏ qua tất cả những rắc rối này chỉ cần nhấn nút thực thì trong IDE của mình để biên dịch và thực thi Hello World trong chương trình Java của bạn.
+
+Chúng ta đến phần cuối của bài viết này về chương trình Hello World trong Java. Nếu bạn muốn biết thêm về Java, bạn có thể tham khảo các Blog Java khác của chúng tôi.
