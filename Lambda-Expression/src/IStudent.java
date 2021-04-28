@@ -1,4 +1,4 @@
 @FunctionalInterface
 public interface IStudent {
-    void display();
+    int sum(int a, int b, int c);
 }

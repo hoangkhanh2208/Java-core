@@ -1,16 +1,31 @@
-public class Dog extends Animal {
-    @Override
-    public void abc() {
-        System.out.println("abc-rebonr");
+public class Dog {
+    private int age;
+    private String name;
+    public int getAge() {
+        return age;
     }
-    
-    void xyz() {
-        System.out.println("xyz");
+    public Dog(int age, String name) {
+        this.age = age;
+        this.name = name;
+    }
+    @Override
+    public String toString() {
+        return name + " - " + age;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+    public String getName() {
+        return name;
     }
 
-    static void method(Animal obj) {
-        if (obj instanceof Dog) {
-           
-        }
-    }
+    public void setName(String name) {
+        this.name = name;
+    }    
+
+    // @Override
+    // public int compareTo(Dog o) {
+
+    //     return this.getName().compareTo(o.getName());
+    // }
 }

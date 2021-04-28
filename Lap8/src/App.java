@@ -25,9 +25,13 @@ public class App {
                 team.buildTeam(4, 3, 3);
                 break;
             case 4:
+                
+                break;
+            case 0:
                 System.out.println("Bạn chọn chức năng thoát! Tạm biệt!");
                 System.exit(0);
                 break;
+                
             default:
                 System.out.println("Chưa có đội hình này.");
                 break;
@@ -41,7 +45,7 @@ public class App {
         System.out.println("  1. Đội hình 4-4-2: 4 hậu vệ - 4 trung vệ - 2 tiền đạo");
         System.out.println("  2. Đội hình 3-5-2: 3 hậu vệ - 5 trung vệ - 2 tiền đạo");
         System.out.println("  3. Đội hình 4-3-3: 4 hậu vệ - 3 trung vệ - 3 tiền đạo");
-        System.out.println("  4. Thoát");
+        System.out.println("  0. Thoát");
         System.out.println("  Choose: ");
     }
 }

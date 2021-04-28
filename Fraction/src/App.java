@@ -8,9 +8,9 @@ public class App {
         System.out.printf("%s + %s = %s", fractionA.print(), fractionB.print(), fractionC.print());
 
         // if (fractionA.checkNormalize()) {
-        //     System.out.println(fractionA.print() + " đã tối giản");
+        // System.out.println(fractionA.print() + " đã tối giản");
         // }else{
-        //     System.out.println(fractionA.print() + " chưa tối giản");
+        // System.out.println(fractionA.print() + " chưa tối giản");
         // }
     }
 }
