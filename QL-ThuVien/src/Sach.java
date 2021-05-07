@@ -118,8 +118,8 @@ public class Sach implements Serializable {
     @Override
     public String toString() {
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-        return "\t" + tenSach + "\t" + tenTacGia + "\t" + ngonNgu + "\t"
-                + theLoai.getTen() + "\t" + nhaXuatBan + "\t" + format.format(ngayPhatHanh) + "\t" + soLuong;
+        return tenSach + " - " + tenTacGia + " - " + ngonNgu + " - "
+                + theLoai.getTen() + " - " + nhaXuatBan + " - " + format.format(ngayPhatHanh) + " - " + soLuong;
     }
 
     public void setTenTacGia(String tenTacGia) {

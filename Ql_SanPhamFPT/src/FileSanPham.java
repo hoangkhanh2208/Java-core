@@ -13,6 +13,8 @@ import java.util.List;
 public class FileSanPham {
     private static final String SANPHAM_FILE_NAME = "DsSanPham.txt";
 
+    File myfile = new File(SANPHAM_FILE_NAME);
+
     public void write(List<SanPham> sanPhamList) {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
